@@ -157,7 +157,7 @@ let Student = function (name, age, hometown) {
   this.hometown = hometown;
 };
 
-// My code below:
+// MY CODE BELOW:
 // let Student = (name, age, hometown) => {
 //   this.name = name;
 //   this.age = age;
@@ -174,14 +174,15 @@ console.log(joe);
 
 
 
-Student.prototype.greeting = function () {
-  return `Hi, my name is ${this.name}`;
-};
+// Student.prototype.greeting = function () {
+//   return `Hi, my name is ${this.name}`;
+// };
 
-// my code below:
-// Student.prototype.greeting = (name) => {
-//   return `Hi, my name is ${name}!`;
-// }
+
+// MY CODE BELOW:
+Student.prototype.greeting = () => `Hi, my name is ${this.name}!`;
+
+
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this method to break!
@@ -191,9 +192,7 @@ console.log(joe.greeting());
 
 
 
-Student.courseName = () => {
-  return 'This student is enrolled in Code 301.';
-};
+Student.courseName = () => 'This student is enrolled in Code 301.';
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 console.log(Student.courseName());
@@ -207,17 +206,21 @@ Student.prototype.scope = function () {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(joe.scope());
+console.log(joe.scope());
 
 Student.prototype.scopeArrow = () => console.log(this);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(joe.scopeArrow());
+console.log(joe.scopeArrow());
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
+// MY RESPONSE: the contextual 'this' local to the Student constructor function.
 //
 // 2. What is "this" when joe.scopeArrow() is invoked?
+// MY RESPONSE: it is 'window' or global.
 //
 // 3. Explain why "this" is different when an arrow function is used.
+// MY RESPONSE: the arrow function decides 'this' depending on what scope it's used in. It can be recognized as local if it is contained within a code block, but it can also be considered window/global.
+
 //
